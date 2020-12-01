@@ -25,3 +25,6 @@ TODO.md
 public/
 cache/
 *.log
+
+# Notion Cache
+source/notion_cache/
