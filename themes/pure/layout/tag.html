@@ -6,7 +6,7 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-WV23EXEF9X"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
 
     gtag('config', 'G-WV23EXEF9X');
@@ -47,6 +47,9 @@
     <a href="index.html">
       <div class="Navbar__Btn">{{siteMeta.iconHTML}} <span>Home</span></div>
     </a>
+    <a href="tag/tech.html">
+      <div class="Navbar__Btn">♯<span>TECH</span></div>
+    </a>
     {{each(options.siteMeta.pages)}}
     {{if(@this.publish && @this.inMenu)}}
     <span class="Navbar__Delim">&centerdot;</span>
@@ -62,40 +65,40 @@
   </header>
   <article class="ArticleList">
     {{each(options.pages)}}
-      {{if(@this.publish && @this.inList)}}
+    {{if(@this.publish && @this.inList)}}
     <article class="Article">
       <h3 class="Article__Title">
-            {{@this.iconHTML}}
+        {{@this.iconHTML}}
         <a href="{{@this.url}}">
-              {{@this.title}}
-            </a>
-          </h3>
+          {{@this.title}}
+        </a>
+      </h3>
       {{if(@this.descriptionHTML)}}
       <p class="Article__Desc">
-          {{@this.descriptionHTML}}
+        {{@this.descriptionHTML}}
       </p>
       {{/if}}
       <div class="DateTagBar">
-          {{if(@this.date)}}
+        {{if(@this.date)}}
         <span class="DateTagBar__Item DateTagBar__Date">Posted on {{@this.dateString}}</span>
-          {{/if}}
-          {{each(@this.tags)}}
+        {{/if}}
+        {{each(@this.tags)}}
         <span class="DateTagBar__Item DateTagBar__Tag DateTagBar__Tag--{{@this.color}}">
-            <a href="tag/{{@this.value}}.html">{{@this.value}}</a>
-          </span>
-          {{/each}}
-        </div>
+          <a href="tag/{{@this.value}}.html">{{@this.value}}</a>
+        </span>
+        {{/each}}
+      </div>
     </article>
-      {{/if}}
-      {{/each}}
+    {{/if}}
+    {{/each}}
   </article>
   <footer class="Footer">
-        <div>&copy; {{siteMeta.title}} 2021</div>
-        <div>&centerdot;</div>
-        <div>Powered by <a href="https://github.com/dragonman225/notablog" target="_blank"
-            rel="noopener noreferrer">Notablog</a>.
-        </div>
-    </footer>
+    <div>&copy; {{siteMeta.title}} 2021</div>
+    <div>&centerdot;</div>
+    <div>Powered by <a href="https://github.com/dragonman225/notablog" target="_blank"
+        rel="noopener noreferrer">Notablog</a>.
+    </div>
+  </footer>
 </body>
 
 </html>

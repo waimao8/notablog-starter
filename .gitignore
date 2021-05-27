@@ -27,4 +27,4 @@ cache/
 *.log
 
 # Notion Cache
-source/notion_cache/
+notion_cache/

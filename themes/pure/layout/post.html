@@ -6,7 +6,7 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-WV23EXEF9X"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
 
     gtag('config', 'G-WV23EXEF9X');
@@ -51,6 +51,9 @@
     <a href="index.html">
       <div class="Navbar__Btn">{{siteMeta.iconHTML}} <span>Home</span></div>
     </a>
+    <a href="tag/tech.html">
+      <div class="Navbar__Btn">♯<span>TECH</span></div>
+    </a>
     {{each(options.siteMeta.pages)}}
     {{if(@this.publish && @this.inMenu)}}
     <span class="Navbar__Delim">&centerdot;</span>
@@ -61,50 +64,45 @@
     {{/each}}
   </nav>
   <header class="Header">
-      {{if(options.post.cover)}}
+    {{if(options.post.cover)}}
     <div class="Header__Cover">
-        <img src="{{post.cover}}">
-      </div>
-      {{/if}}
+      <img src="{{post.cover}}">
+    </div>
+    {{/if}}
     <div class="Header__Spacer {{if(!options.post.cover)}}Header__Spacer--NoCover{{/if}}">
     </div>
     {{if(options.post.icon)}}
     <div class="Header__Icon">{{post.iconHTML}}</div>
     {{/if}}
     <h1 class="Header__Title">{{post.title}}</h1>
-        {{if(options.post.date || options.post.tags.length)}}
+    {{if(options.post.date || options.post.tags.length)}}
     <div class="DateTagBar">
-          {{if(options.post.date)}}
+      {{if(options.post.date)}}
       <span class="DateTagBar__Item DateTagBar__Date">Posted on {{post.dateString}}</span>
-          {{/if}}
-          {{each(options.post.tags)}}
+      {{/if}}
+      {{each(options.post.tags)}}
       <span class="DateTagBar__Item DateTagBar__Tag DateTagBar__Tag--{{@this.color}}">
-            <a href="tag/{{@this.value}}.html">{{@this.value}}</a>
-          </span>
-          {{/each}}
-        </div>
-        {{/if}}
+        <a href="tag/{{@this.value}}.html">{{@this.value}}</a>
+      </span>
+      {{/each}}
+    </div>
+    {{/if}}
   </header>
-      {{post.contentHTML}}
+  {{post.contentHTML}}
 
   <div>
     <!-- utterances - Github issue comment -->
-    <script src="https://utteranc.es/client.js"
-	repo="IMBlues/IMBlues.github.io"
-	issue-term="pathname"
-	label="blog-comment"
-	theme="github-light"
-	crossorigin="anonymous"
-	async>
-    </script>
+    <script src="https://utteranc.es/client.js" repo="IMBlues/IMBlues.github.io" issue-term="pathname"
+      label="blog-comment" theme="github-light" crossorigin="anonymous" async>
+      </script>
   </div>
 
   <footer class="Footer">
-        <div>&copy; {{siteMeta.title}} 2021</div>
-        <div>&centerdot;</div>
-        <div>Powered by <a href="https://github.com/dragonman225/notablog" target="_blank"
-            rel="noopener noreferrer">Notablog</a>.
-        </div>
+    <div>&copy; {{siteMeta.title}} 2021</div>
+    <div>&centerdot;</div>
+    <div>Powered by <a href="https://github.com/dragonman225/notablog" target="_blank"
+        rel="noopener noreferrer">Notablog</a>.
+    </div>
   </footer>
 </body>
 
